@@ -5,9 +5,8 @@ export default function(state = {}, action) {
   switch (action.type) {
     case Actions.FETCH_GIFS:
       const gifs = action.payload.data.data;
-      const results = _.mapKeys(gifs, "id");
-      console.log(results);
-      return { ...state, results };
+      // const results = _.mapKeys(gifs, "id");
+      return { ...state, results: gifs };
 
     default:
       return state;
