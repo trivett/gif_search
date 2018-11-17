@@ -6,18 +6,13 @@ import { fetchGifs } from "../actions/index";
 import { GifItem } from "./GifItem";
 
 class GifList extends Component {
-  componentDidMount() {
-    this.props.fetchGifs();
-  }
-
   renderGifs() {
-    // return <li>hi</li>;
     if (!this.props.results) {
-      return <li>noe</li>;
+      return <li>No results yet. Please Enter your search terms</li>;
     }
     return this.props.results.map(gif => {
       return (
-        <li>
+        <li key={gif.id}>
           <img src={gif.images.original.url} />
         </li>
       );

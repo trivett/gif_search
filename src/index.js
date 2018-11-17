@@ -9,7 +9,6 @@ import "./index.css";
 import App from "./App";
 
 import reducers from "./reducers";
-import { Divider } from "@material-ui/core";
 
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 

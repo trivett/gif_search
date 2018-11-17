@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import AppBar from "@material-ui/core/AppBar";
-import InputBase from "@material-ui/core/Input";
-import SearchIcon from "@material-ui/icons/Search";
 import _ from "lodash";
 
 import { fetchGifs } from "../actions/index";
@@ -27,24 +24,15 @@ class SearchBar extends Component {
   }
 
   render() {
-    const classes = this.props;
     return (
       <div className="search-bar">
-        <AppBar position="static">
-          <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
-            </div>
-            <InputBase
-              placeholder="Search…"
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput
-              }}
-              onChange={this.onInputChange.bind(this)}
-            />
-          </div>
-        </AppBar>
+        <form className="input-group">
+          <input
+            placeholder="Enter your search terms"
+            className="form-control"
+            onChange={this.onInputChange.bind(this)}
+          />
+        </form>
       </div>
     );
   }
