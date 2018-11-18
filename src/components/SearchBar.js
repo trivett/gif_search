@@ -3,12 +3,11 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import _ from "lodash";
 
-import { fetchGifs } from "../actions/index";
+import { fetchGifs } from "../actions";
 
 class SearchBar extends Component {
   constructor(props) {
     super(props);
-    this.state = { query: "", favorites: [], results: [] };
     this.onInputChange = this.onInputChange.bind(this);
     this.debouncedCall = _.debounce(this.updateQuery, 500);
   }

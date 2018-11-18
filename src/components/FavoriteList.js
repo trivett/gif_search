@@ -3,12 +3,16 @@ import { connect } from "react-redux";
 
 import GifItem from "./GifItem";
 
-class GifList extends Component {
+class FavoriteList extends Component {
   renderGifs() {
-    if (!this.props.results) {
-      return <li>No results yet. Please Enter your search terms</li>;
+    if (!this.props.favorites) {
+      return (
+        <li>
+          No favorites yet. Please search for gifs to add to your favorites.
+        </li>
+      );
     }
-    return this.props.results.map(gif => {
+    return this.props.favorites.map(gif => {
       return (
         <li key={gif.id}>
           <GifItem gif={gif} />
@@ -30,7 +34,7 @@ class GifList extends Component {
 }
 
 function mapStateToProps(state) {
-  return { results: state.gifSearch.results };
+  return { favorites: state.gifSearch.favorites };
 }
 
-export default connect(mapStateToProps)(GifList);
+export default connect(mapStateToProps)(FavoriteList);
