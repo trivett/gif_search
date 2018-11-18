@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { fetchGifs } from "../actions/index";
 
-import { GifItem } from "./GifItem";
+import GifItem from "./GifItem";
 
 class GifList extends Component {
   renderGifs() {
@@ -13,7 +12,7 @@ class GifList extends Component {
     return this.props.results.map(gif => {
       return (
         <li key={gif.id}>
-          <img src={gif.images.original.url} />
+          <GifItem gif={gif} />
         </li>
       );
     });
@@ -35,7 +34,4 @@ function mapStateToProps(state) {
   return { results: state.gifSearch.results };
 }
 
-export default connect(
-  mapStateToProps,
-  { fetchGifs }
-)(GifList);
+export default connect(mapStateToProps)(GifList);
