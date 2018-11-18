@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
+
 import { addToFavorites, removeFromFavorites } from "../actions";
 
 class FaveToggle extends Component {
@@ -16,7 +17,6 @@ class FaveToggle extends Component {
     if (this.props.favorites.includes(this.props.id)) {
       return (
         <div>
-          <p>{this.props.favorites}</p>
           <p className="card-text">Remove from favorites?</p>
           <button
             type="button"
@@ -30,7 +30,6 @@ class FaveToggle extends Component {
     } else {
       return (
         <div>
-          <p>{this.props.favorites}</p>
           <p className="card-text">Add to favorites?</p>
           <button
             type="button"
@@ -49,7 +48,6 @@ class FaveToggle extends Component {
 }
 
 function mapStateToProps(state) {
-  // console.log(state);
   return { favorites: state.gifSearch.favorites };
 }
 

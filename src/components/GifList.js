@@ -10,7 +10,7 @@ class GifList extends Component {
     }
     return this.props.results.map(gif => {
       return (
-        <li key={gif.id}>
+        <li className="gif-card" key={gif.id}>
           <GifItem gif={gif} />
         </li>
       );
@@ -22,7 +22,7 @@ class GifList extends Component {
       <div>
         <div>
           <h3>Your Gif Search Results</h3>
-          <ul className="list-group">{this.renderGifs()}</ul>
+          <ul className="list-group gif-list">{this.renderGifs()}</ul>
         </div>
       </div>
     );

@@ -1,0 +1,14 @@
+.search-bar {
+  margin-top: 20px;
+}
+
+.gif-list {
+  width: 50%;
+  list-style-type: none;
+
+}
+
+.gif-item {
+  
+  margin: 20px 0;
+}

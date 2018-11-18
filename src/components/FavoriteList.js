@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 import GifItem from "./GifItem";
+import Nav from "./Nav";
 import { GIPHY_API_KEY, GIPHY_ROOT_URL } from "../constants";
 
 class FavoriteList extends Component {
@@ -14,7 +16,7 @@ class FavoriteList extends Component {
     this.getGifs();
   }
 
-  async getGifs() {
+  getGifs() {
     this.props.favorites.map(id => {
       const url = `${GIPHY_ROOT_URL}/${id}?api_key=${GIPHY_API_KEY}`;
       const request = axios.get(url).then(res => {
@@ -42,10 +44,14 @@ class FavoriteList extends Component {
 
   render() {
     return (
-      <div>
+      <div className="FavoriteList container">
+        <Nav />
         <div>
-          <h3>Your Favorite Gifs</h3>
-          <ul className="list-group">{this.renderGifs()}</ul>
+          <div>
+            <h3>Your Favorite Gifs</h3>
+            <Link to="/">Add more gifs to your collection!</Link>
+            <ul className="list-group gif-list">{this.renderGifs()}</ul>
+          </div>
         </div>
       </div>
     );

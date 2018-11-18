@@ -6,7 +6,7 @@ import FavoriteList from "./components/FavoriteList";
 
 import "bootstrap/dist/css/bootstrap.css";
 
-import "./App.scss";
+import "./App.css";
 
 class App extends Component {
   render() {
