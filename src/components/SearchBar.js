@@ -25,7 +25,7 @@ class SearchBar extends Component {
   render() {
     return (
       <div className="search-bar">
-        <form className="input-group">
+        <form className="input-group" onSubmit={e => e.preventDefault()}>
           <input
             placeholder="Enter your search terms"
             className="form-control"

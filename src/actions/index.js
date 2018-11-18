@@ -1,7 +1,5 @@
 import axios from "axios";
-import GIPHY_API_KEY from "../keys";
-
-const GIPHY_ROOT_URL = `https://api.giphy.com/v1/gifs`;
+import { GIPHY_API_KEY, GIPHY_ROOT_URL } from "../constants";
 
 export const Actions = {
   FETCH_GIFS: "FETCH_GIFS",
@@ -15,15 +13,6 @@ export function fetchGifs(query) {
   const request = axios.get(search);
   return {
     type: Actions.FETCH_GIFS,
-    payload: request
-  };
-}
-
-export function fetchGifById(id) {
-  const searchById = `${GIPHY_ROOT_URL}/${id}?api_key=${GIPHY_API_KEY}`;
-  const request = axios.get(searchById);
-  return {
-    type: Actions.FETCH_GIF_BY_ID,
     payload: request
   };
 }

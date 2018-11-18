@@ -1,7 +1,9 @@
 import React, { Component } from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-import SearchBar from "./components/SearchBar";
-import GifList from "./components/GifList";
+import SearchPage from "./components/SearchPage";
+import FavoriteList from "./components/FavoriteList";
+
 import "bootstrap/dist/css/bootstrap.css";
 
 import "./App.scss";
@@ -9,10 +11,14 @@ import "./App.scss";
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <SearchBar />
-        <GifList />
-      </div>
+      <BrowserRouter>
+        <div>
+          <Switch>
+            <Route path="/favorites" component={FavoriteList} />
+            <Route path="/" component={SearchPage} />
+          </Switch>
+        </div>
+      </BrowserRouter>
     );
   }
 }

@@ -7,10 +7,11 @@ class FaveToggle extends Component {
   remove() {
     this.props.removeFromFavorites(this.props.id);
   }
+
   add() {
-    // debugger;
     this.props.addToFavorites(this.props.id);
   }
+
   textAndButtons() {
     if (this.props.favorites.includes(this.props.id)) {
       return (
