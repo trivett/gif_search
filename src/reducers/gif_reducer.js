@@ -1,5 +1,4 @@
 import { Actions } from "../actions/index";
-import _ from "lodash";
 
 const sideEffects = {
   readFromLocalStorage: () => {

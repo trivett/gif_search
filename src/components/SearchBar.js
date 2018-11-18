@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import _ from "lodash";
+import debounce from "lodash/debounce";
 
 import { fetchGifs } from "../actions";
 
@@ -9,7 +9,7 @@ class SearchBar extends Component {
   constructor(props) {
     super(props);
     this.onInputChange = this.onInputChange.bind(this);
-    this.debouncedCall = _.debounce(this.updateQuery, 500);
+    this.debouncedCall = debounce(this.updateQuery, 500);
   }
 
   onInputChange(event) {

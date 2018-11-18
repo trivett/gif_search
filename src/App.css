@@ -3,12 +3,19 @@
 }
 
 .gif-list {
-  width: 50%;
   list-style-type: none;
-
+  width: 50%;
+  margin: 0 auto;
 }
 
+
 .gif-item {
-  
+
   margin: 20px 0;
+}
+
+@media only screen and (max-width: 800px) {
+  .gif-list {
+    width: 100%;
+  }
 }

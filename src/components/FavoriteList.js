@@ -17,9 +17,9 @@ class FavoriteList extends Component {
   }
 
   getGifs() {
-    this.props.favorites.map(id => {
+    this.props.favorites.forEach(id => {
       const url = `${GIPHY_ROOT_URL}/${id}?api_key=${GIPHY_API_KEY}`;
-      const request = axios.get(url).then(res => {
+      axios.get(url).then(res => {
         this.setState({ gifs: [...this.state.gifs, res.data.data] });
       });
     });
